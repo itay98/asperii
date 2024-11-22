@@ -3,7 +3,7 @@
 #
 
 package.xml
-
+**/fields/
 # LWC configuration files
 **/jsconfig.json
 **/.eslintrc.json

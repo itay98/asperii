@@ -1,0 +1,7 @@
+div{
+    border: 1px solid;
+    border-radius: 12px;
+}
+lightning-button-icon{
+    --slds-c-button-radius-border: 50%;
+}

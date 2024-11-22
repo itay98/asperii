@@ -1,0 +1,22 @@
+<template>
+    <div>
+        <p lwc:if={cannotHaveGrandchildren} class="slds-align_absolute-center">{cannotHaveGrandchildren}</p>
+        <lightning-layout lwc:else multiple-rows="true" horizontal-align="space" class="slds-p-around_large">
+            <lightning-layout-item lwc:if={isMarried} size="12">
+                <p class="slds-align_absolute-center">your kid is married</p>
+                <p class="slds-align_absolute-center">you currently have {grandchildren} grandchildren</p>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-medium">
+                <c-parent name={parent1Name}>
+                    <c-grandchild lwc:if={isMarried} onadd={incrementGrandchildren}></c-grandchild>
+                </c-parent>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-medium">
+                <c-parent name={parent2Name}></c-parent>
+            </lightning-layout-item>
+            <lightning-layout-item if:false={isMarried} size="12" class="slds-align_absolute-center">
+                <lightning-button label="Connect" onclick={connect}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>
